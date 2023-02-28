@@ -1,0 +1,16 @@
+.row{
+    color: #f0f8ff;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    
+}
+.relojcontainer{
+    justify-content: center;
+}
+.number, 
+.reloj{
+    font-size: 40px;
+    /* background: gray; */
+    }
