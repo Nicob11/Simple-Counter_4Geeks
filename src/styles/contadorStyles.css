@@ -1,16 +1,20 @@
-.row{
-    color: #f0f8ff;
-}
+
 .container{
     display: flex;
     justify-content: center;
+    font-family: 'Tilt Neon', cursive;
     
 }
-.relojcontainer{
-    justify-content: center;
+.clock{
+    display: flex;
 }
 .number, 
 .reloj{
-    font-size: 40px;
-    /* background: gray; */
+    font-size: 60px;
     }
+
+.card{
+    background: rgb(75, 72, 72);
+    padding: 2rem;
+    margin: 1rem;
+}

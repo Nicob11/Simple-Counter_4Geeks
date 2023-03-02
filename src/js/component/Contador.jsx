@@ -5,58 +5,54 @@ import { useState, useEffect } from "react";
 
 const Contador = () =>{
     
-    let first = 0;
-    let second = 0;
-    let third = 0;
-    let fourth = 0;
-    let fifth = 0;
-    let sixth = 0;
- 
-    
-    const [one, setOne] = useState(first);
-    const [two, setTwo] = useState(second);
-    const [three, setThree] = useState(third);
-    const [four, setFour] = useState(fourth);
-    const [five, setFive] = useState(fifth);
-    const [six, setSix] = useState(sixth);
+    const [one, setOne] = useState(0);
+    const [two, setTwo] = useState(0);
+    const [three, setThree] = useState(0);
+    const [four, setFour] = useState(0);
+    const [five, setFive] = useState(0);
+    const [six, setSix] = useState(0);
     
     const growTimer = () =>{
         setOne(one + 1);
     }
     useEffect(()=>{
-        const intervalId = setInterval(growTimer,1)
+        const intervalId = setInterval(growTimer,1000)
         return () => clearInterval(intervalId)
     }, [one])
     if(one === 10){
-        setOne(first);
+        setOne(0);
         setTwo(two + 1)
-        if(two === 6){
-            setTwo(second)
+    }
+        if(two === 10){
+            setTwo(0)
             setThree(three + 1)
         }
         if(three === 10){
-            setThree(third)
+            setThree(0)
             setFour(four + 1)
         }
         if(four === 10){
-            setFour(fourth)
+            setFour(0)
             setFive(five + 1)
         }
         if(five === 10){
-            setFive(fifth)
+            setFive(0)
             setSix(six + 1)
         }
-    }
+    // }
     return (
-        <div className="container d-flex bg-dark">
-            <div className="row">
-               <div className="col-2 relojcontainer"><div className="reloj"><i className="fa-regular fa-clock"></i></div></div>
-                <div className="col-1 numberContainer"><div className="number mx-2 w-auto">{six}</div></div>
-                <div className="col-1 numberContainer"><div className="number mx-2 w-auto">{five}</div></div>
-                <div className="col-1 numberContainer"><div className="number mx-2 w-auto">{four}</div></div>
-                <div className="col-1 numberContainer"><div className="number mx-2 w-auto">{three}</div></div>
-                <div className="col-1 numberContainer"><div className="number mx-2 w-auto">{two}</div></div>
-                <div className="col-1 numberContainer"><div className="number mx-2 w-auto">{one}</div></div>
+        <div className="container">
+            <div className="clock bg-dark text-light">
+               <div className="card"><div className="reloj"><i className="fa-regular fa-clock"></i></div></div>
+                <div className="card"><div className="number">{six}</div></div>
+                <div className="card"><div className="number">{five}</div></div>
+                <div className="card"><div className="number">{four}</div></div>
+                <div className="card"><div className="number">{three}</div></div>
+                <div className="card"><div className="number">{two}</div></div>
+                <div className="card"><div className="number">{one}</div></div>
+            </div>
+            <div className="button">
+                <button className="btn btn-danger">Restart</button>
             </div>
         </div>
         )
